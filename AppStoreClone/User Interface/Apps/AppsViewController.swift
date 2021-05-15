@@ -1,0 +1,140 @@
+//
+//  AppsViewController.swift
+//  AppStoreClone
+//
+//  Created by Pradeep Gianchandani on 14/05/21.
+//
+
+import UIKit
+
+class AppsViewController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    let cellId = "id"
+    let headerId = "headerId"
+    
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: .large)
+        aiv.color = .black
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.backgroundColor = .white
+        
+        collectionView.register(AppsViewCell.self, forCellWithReuseIdentifier: cellId)
+        
+        // 1
+        collectionView.register(AppsHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.fillSuperview()
+        
+        fetchData()
+    }
+    
+//    var editorsChoiceGames: AppGroup?
+    
+    var socialApps = [SocialApp]()
+    var groups = [AppGroup]()
+    
+    fileprivate func fetchData() {
+        
+        var group1: AppGroup?
+        var group2: AppGroup?
+        var group3: AppGroup?
+        
+        // help you sync your data fetches together
+        // Here we should reload the collection view only when we receive response from all the services
+        // Hence we make use of dispatch group so that we get notified when we receive response from all the services
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        AppstoreAPI.shared.fetchGames { (appGroup, err) in
+            print("Done with games")
+            dispatchGroup.leave()
+            group1 = appGroup
+        }
+        
+        dispatchGroup.enter()
+        AppstoreAPI.shared.fetchTopGrossing { (appGroup, err) in
+            print("Done with top grossing")
+            dispatchGroup.leave()
+            group2 = appGroup
+        }
+        
+        dispatchGroup.enter()
+        AppstoreAPI.shared.fetchAppGroup(urlString: "https://rss.itunes.apple.com/api/v1/us/ios-apps/top-free/all/25/explicit.json") { (appGroup, err) in
+            dispatchGroup.leave()
+            print("Done with free games")
+            group3 = appGroup
+        }
+        
+        dispatchGroup.enter()
+        AppstoreAPI.shared.fetchSocialApps { (apps, err) in
+            // you should check the err
+            dispatchGroup.leave()
+            self.socialApps = apps ?? []
+//            self.collectionView.reloadData()
+        }
+        
+        // completion
+        dispatchGroup.notify(queue: .main) {
+            print("completed your dispatch group tasks...")
+            
+            self.activityIndicatorView.stopAnimating()
+            
+            if let group = group1 {
+                self.groups.append(group)
+            }
+            if let group = group2 {
+                self.groups.append(group)
+            }
+            if let group = group3 {
+                self.groups.append(group)
+            }
+            self.collectionView.reloadData()
+        }
+    }
+    
+    // 2
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! AppsHeaderView
+        header.appHeaderHorizontalController.socialApps = self.socialApps
+        header.appHeaderHorizontalController.collectionView.reloadData()
+        return header
+    }
+    
+    // 3
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: view.frame.width, height: 300)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return groups.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppsViewCell
+        
+        let appGroup = groups[indexPath.item]
+        
+        cell.titleLabel.text = appGroup.feed.title
+        cell.horizontalController.appGroup = appGroup
+        cell.horizontalController.collectionView.reloadData()
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width, height: 300)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 16, left: 0, bottom: 0, right: 0)
+    }
+    
+}
+
