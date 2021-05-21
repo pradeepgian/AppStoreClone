@@ -33,6 +33,14 @@
 		807D432D264EA9B800A8559A /* AppsHeaderHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D432C264EA9B800A8559A /* AppsHeaderHorizontalController.swift */; };
 		807D4330264EC9CF00A8559A /* SearchAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D432F264EC9CF00A8559A /* SearchAppsViewController.swift */; };
 		807D4332264ECA5700A8559A /* SearchAppsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D4331264ECA5700A8559A /* SearchAppsCell.swift */; };
+		80DCDA402656835E0017BADB /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA3F2656835E0017BADB /* AppDetailController.swift */; };
+		80DCDA42265689DD0017BADB /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA41265689DD0017BADB /* Reviews.swift */; };
+		80DCDA4426568B240017BADB /* AppDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA4326568B240017BADB /* AppDetailHeaderCell.swift */; };
+		80DCDA4626568B9D0017BADB /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA4526568B9D0017BADB /* PreviewCell.swift */; };
+		80DCDA4826568D2A0017BADB /* ReviewsRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA4726568D2A0017BADB /* ReviewsRowCell.swift */; };
+		80DCDA4A26568D4C0017BADB /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA4926568D4C0017BADB /* ReviewCell.swift */; };
+		80DCDA4C26568DE00017BADB /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA4B26568DE00017BADB /* ReviewsController.swift */; };
+		80DCDA4E26568E130017BADB /* PreviewScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA4D26568E130017BADB /* PreviewScreenshotCell.swift */; };
 		E1ABB75266D2B541325CC05C /* Pods_AppStoreClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E934379710670DA99DC540 /* Pods_AppStoreClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +75,14 @@
 		807D432F264EC9CF00A8559A /* SearchAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppsViewController.swift; sourceTree = "<group>"; };
 		807D4331264ECA5700A8559A /* SearchAppsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppsCell.swift; sourceTree = "<group>"; };
 		80A61C19D45929A00BBFF01B /* Pods-AppStoreClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreClone.release.xcconfig"; path = "Target Support Files/Pods-AppStoreClone/Pods-AppStoreClone.release.xcconfig"; sourceTree = "<group>"; };
+		80DCDA3F2656835E0017BADB /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
+		80DCDA41265689DD0017BADB /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		80DCDA4326568B240017BADB /* AppDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailHeaderCell.swift; sourceTree = "<group>"; };
+		80DCDA4526568B9D0017BADB /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		80DCDA4726568D2A0017BADB /* ReviewsRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsRowCell.swift; sourceTree = "<group>"; };
+		80DCDA4926568D4C0017BADB /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		80DCDA4B26568DE00017BADB /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
+		80DCDA4D26568E130017BADB /* PreviewScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotCell.swift; sourceTree = "<group>"; };
 		D43C77B3693FF12C9AD4B19A /* Pods-AppStoreClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreClone.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreClone/Pods-AppStoreClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +131,6 @@
 				807D4306264E8A3500A8559A /* Model */,
 				807D4305264E8A2D00A8559A /* Networking */,
 				807D4304264E8A1900A8559A /* Extensions */,
-				807D4303264E8A0800A8559A /* Views */,
 				807D4302264E89F400A8559A /* User Interface */,
 				807D42EE264E74F800A8559A /* AppDelegate.swift */,
 				807D42F0264E74F900A8559A /* SceneDelegate.swift */,
@@ -131,17 +146,11 @@
 		807D4302264E89F400A8559A /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				80DCDA3E2656831F0017BADB /* AppDetail */,
 				807D432E264EC9C000A8559A /* Search */,
 				807D430A264E8B1900A8559A /* Apps */,
 			);
 			path = "User Interface";
-			sourceTree = "<group>";
-		};
-		807D4303264E8A0800A8559A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		807D4304264E8A1900A8559A /* Extensions */ = {
@@ -169,6 +178,7 @@
 				807D431B264E919500A8559A /* SearchResult.swift */,
 				807D431D264E950E00A8559A /* AppGroup.swift */,
 				807D431F264E954E00A8559A /* SocialApp.swift */,
+				80DCDA41265689DD0017BADB /* Reviews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +222,20 @@
 				807D4331264ECA5700A8559A /* SearchAppsCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		80DCDA3E2656831F0017BADB /* AppDetail */ = {
+			isa = PBXGroup;
+			children = (
+				80DCDA3F2656835E0017BADB /* AppDetailController.swift */,
+				80DCDA4326568B240017BADB /* AppDetailHeaderCell.swift */,
+				80DCDA4526568B9D0017BADB /* PreviewCell.swift */,
+				80DCDA4726568D2A0017BADB /* ReviewsRowCell.swift */,
+				80DCDA4926568D4C0017BADB /* ReviewCell.swift */,
+				80DCDA4B26568DE00017BADB /* ReviewsController.swift */,
+				80DCDA4D26568E130017BADB /* PreviewScreenshotCell.swift */,
+			);
+			path = AppDetail;
 			sourceTree = "<group>";
 		};
 		F8165D930402696567CF9A18 /* Pods */ = {
@@ -338,20 +362,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				807D4318264E8F9900A8559A /* CustomSnappingLayout.swift in Sources */,
+				80DCDA42265689DD0017BADB /* Reviews.swift in Sources */,
 				807D4312264E8F1D00A8559A /* UIView+AnchorConstraints.swift in Sources */,
+				80DCDA4A26568D4C0017BADB /* ReviewCell.swift in Sources */,
 				807D4314264E8F3E00A8559A /* VerticalStackView.swift in Sources */,
 				807D4332264ECA5700A8559A /* SearchAppsCell.swift in Sources */,
 				807D42F3264E74F900A8559A /* ViewController.swift in Sources */,
 				807D432D264EA9B800A8559A /* AppsHeaderHorizontalController.swift in Sources */,
 				807D430C264E8B3300A8559A /* AppsViewController.swift in Sources */,
+				80DCDA4C26568DE00017BADB /* ReviewsController.swift in Sources */,
 				807D4330264EC9CF00A8559A /* SearchAppsViewController.swift in Sources */,
 				807D4326264EA65400A8559A /* HorizontalSnappingController.swift in Sources */,
 				807D431E264E950E00A8559A /* AppGroup.swift in Sources */,
 				807D4309264E8AD200A8559A /* RootTabBarController.swift in Sources */,
+				80DCDA4E26568E130017BADB /* PreviewScreenshotCell.swift in Sources */,
+				80DCDA4826568D2A0017BADB /* ReviewsRowCell.swift in Sources */,
 				807D4320264E954E00A8559A /* SocialApp.swift in Sources */,
+				80DCDA4426568B240017BADB /* AppDetailHeaderCell.swift in Sources */,
+				80DCDA402656835E0017BADB /* AppDetailController.swift in Sources */,
 				807D430E264E8B9A00A8559A /* BaseCollectionViewController.swift in Sources */,
 				807D4324264EA5F000A8559A /* AppsCellViewController.swift in Sources */,
 				807D431C264E919500A8559A /* SearchResult.swift in Sources */,
+				80DCDA4626568B9D0017BADB /* PreviewCell.swift in Sources */,
 				807D432B264EA94100A8559A /* AppsHeaderCell.swift in Sources */,
 				807D4316264E8F6900A8559A /* UILabel+Style.swift in Sources */,
 				807D431A264E90C100A8559A /* AppstoreAPI.swift in Sources */,

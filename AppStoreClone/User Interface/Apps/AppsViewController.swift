@@ -83,7 +83,6 @@ class AppsViewController: BaseCollectionViewController, UICollectionViewDelegate
         // completion
         dispatchGroup.notify(queue: .main) {
             print("completed your dispatch group tasks...")
-            
             self.activityIndicatorView.stopAnimating()
             
             if let group = group1 {
@@ -124,6 +123,12 @@ class AppsViewController: BaseCollectionViewController, UICollectionViewDelegate
         cell.titleLabel.text = appGroup.feed.title
         cell.horizontalController.appGroup = appGroup
         cell.horizontalController.collectionView.reloadData()
+        cell.horizontalController.didSelectHandler = { [weak self] feedResult in
+            
+            let controller = AppDetailController(appId: feedResult.id)
+            controller.navigationItem.title = feedResult.name
+            self?.navigationController?.pushViewController(controller, animated: true)
+        }
         
         return cell
     }

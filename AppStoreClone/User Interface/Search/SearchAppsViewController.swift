@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 class AppsSearchController: BaseCollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
-
+    
     fileprivate let cellId = "id1234"
     
     fileprivate let searchController = UISearchController(searchResultsController: nil)
@@ -21,6 +21,12 @@ class AppsSearchController: BaseCollectionViewController, UICollectionViewDelega
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appId = String(appResults[indexPath.item].trackId)
+        let appDetailController = AppDetailController(appId: appId)
+        navigationController?.pushViewController(appDetailController, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +64,11 @@ class AppsSearchController: BaseCollectionViewController, UICollectionViewDelega
             
             // this will actually fire my search
             AppstoreAPI.shared.fetchApps(searchTerm: searchText) { (res, err) in
+                if let err = err {
+                    print("Failed to fetch apps:", err)
+                    return
+                }
+                
                 self.appResults = res?.results ?? []
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
