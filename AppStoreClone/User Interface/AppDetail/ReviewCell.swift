@@ -53,7 +53,6 @@ class ReviewCell: UICollectionViewCell {
         
         addSubview(stackView)
         
-//        stackView.fillSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))
         stackView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 20, left: 20, bottom: 0, right: 20))
     }
     
