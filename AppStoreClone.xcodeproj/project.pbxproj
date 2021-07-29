@@ -47,6 +47,7 @@
 		80B06A5B26B2853C00F8D001 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B06A5A26B2853C00F8D001 /* MusicController.swift */; };
 		80B06A5D26B285D300F8D001 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B06A5C26B285D300F8D001 /* TrackCell.swift */; };
 		80B06A5F26B285F000F8D001 /* LoadingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B06A5E26B285F000F8D001 /* LoadingFooter.swift */; };
+		80B06A6226B2A1FE00F8D001 /* CompostionalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B06A6126B2A1FE00F8D001 /* CompostionalController.swift */; };
 		80DCDA402656835E0017BADB /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA3F2656835E0017BADB /* AppDetailController.swift */; };
 		80DCDA42265689DD0017BADB /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA41265689DD0017BADB /* Reviews.swift */; };
 		80DCDA4426568B240017BADB /* AppDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCDA4326568B240017BADB /* AppDetailHeaderCell.swift */; };
@@ -119,6 +120,7 @@
 		80B06A5A26B2853C00F8D001 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		80B06A5C26B285D300F8D001 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		80B06A5E26B285F000F8D001 /* LoadingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingFooter.swift; sourceTree = "<group>"; };
+		80B06A6126B2A1FE00F8D001 /* CompostionalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompostionalController.swift; sourceTree = "<group>"; };
 		80DCDA3F2656835E0017BADB /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		80DCDA41265689DD0017BADB /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		80DCDA4326568B240017BADB /* AppDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailHeaderCell.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		807D4302264E89F400A8559A /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				80B06A6026B2A1CC00F8D001 /* AppsControllerUsingCompositionalLayout */,
 				80B06A5926B284EC00F8D001 /* Music */,
 				80865270265BA1970027F44B /* Today */,
 				80DCDA3E2656831F0017BADB /* AppDetail */,
@@ -304,6 +307,14 @@
 				80B06A5E26B285F000F8D001 /* LoadingFooter.swift */,
 			);
 			path = Music;
+			sourceTree = "<group>";
+		};
+		80B06A6026B2A1CC00F8D001 /* AppsControllerUsingCompositionalLayout */ = {
+			isa = PBXGroup;
+			children = (
+				80B06A6126B2A1FE00F8D001 /* CompostionalController.swift */,
+			);
+			path = AppsControllerUsingCompositionalLayout;
 			sourceTree = "<group>";
 		};
 		80DCDA3E2656831F0017BADB /* AppDetail */ = {
@@ -455,6 +466,7 @@
 				807D4332264ECA5700A8559A /* SearchAppsCell.swift in Sources */,
 				80865281265BD2DD0027F44B /* AppFullScreenHeaderCell.swift in Sources */,
 				807D42F3264E74F900A8559A /* ViewController.swift in Sources */,
+				80B06A6226B2A1FE00F8D001 /* CompostionalController.swift in Sources */,
 				807D432D264EA9B800A8559A /* AppsHeaderHorizontalController.swift in Sources */,
 				807D430C264E8B3300A8559A /* AppsViewController.swift in Sources */,
 				80DCDA4C26568DE00017BADB /* ReviewsController.swift in Sources */,
