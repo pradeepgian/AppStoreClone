@@ -33,6 +33,8 @@ class TodayAppImageDescriptionCell: BaseTodayCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        [categoryLabel, titleLabel, descriptionLabel].forEach{$0.textColor = .black}
+        
         backgroundColor = .white
 //        clipsToBounds = true
         layer.cornerRadius = 16

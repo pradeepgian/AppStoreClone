@@ -108,9 +108,11 @@ class TodayController: BaseCollectionViewController, UICollectionViewDelegateFlo
     }
     
     fileprivate func setupSingleAppFullscreenController(_ indexPath: IndexPath) {
+        navigationController?.navigationBar.isHidden = true
         let appFullscreenController = AppFullscreenController()
         appFullscreenController.todayItem = items[indexPath.row]
         appFullscreenController.dismissHandler = {
+            self.navigationController?.navigationBar.isHidden = false
             self.handleAppFullscreenDismissal()
         }
         

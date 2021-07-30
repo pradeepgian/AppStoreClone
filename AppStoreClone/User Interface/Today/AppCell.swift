@@ -33,6 +33,7 @@ class AppCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        [nameLabel, companyLabel].forEach{$0.textColor = .black}
         
         imageView.backgroundColor = .purple
         imageView.constrainWidth(constant: 64)
